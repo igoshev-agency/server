@@ -1,4 +1,8 @@
 export class CreateMenuDto {
-  title: string;
+  title: {
+    en: string;
+    de: string;
+    ru: string;
+  };
   path: string;
 }

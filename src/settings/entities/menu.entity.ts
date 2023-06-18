@@ -6,7 +6,11 @@ export type MenuDocument = HydratedDocument<Menu>;
 @Schema()
 export class Menu {
   @Prop()
-  title: string;
+  title: {
+    en: string;
+    de: string;
+    ru: string;
+  };
 
   @Prop()
   path: string;
