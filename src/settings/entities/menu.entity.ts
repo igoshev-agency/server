@@ -1,16 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
+import { Localization } from './localization.entity';
 
 export type MenuDocument = HydratedDocument<Menu>;
 
 @Schema()
 export class Menu {
-  @Prop()
-  title: {
-    en: string;
-    de: string;
-    ru: string;
-  };
+  @Prop({ type: { type: mongoose.Schema.Types.ObjectId, ref: 'Localization' } })
+  title: Localization;
 
   @Prop()
   path: string;

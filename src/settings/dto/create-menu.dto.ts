@@ -1,8 +1,6 @@
+import { Localization } from '../entities/localization.entity';
+
 export class CreateMenuDto {
-  title: {
-    en: string;
-    de: string;
-    ru: string;
-  };
+  title: Localization;
   path: string;
 }
