@@ -1,19 +1,30 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { SettingsService } from './settings.service';
 import { CreateMenuDto } from './dto/create-menu.dto';
+import { CreateInfoDto } from './dto/create-info.dto';
 
 @Controller('settings')
 export class SettingsController {
   constructor(private readonly settingsService: SettingsService) {}
 
   @Post('menu')
-  create(@Body() dto: CreateMenuDto) {
+  createMenu(@Body() dto: CreateMenuDto) {
     return this.settingsService.createMenu(dto);
   }
 
   @Get('menu')
-  findAll() {
-    return this.settingsService.findAll();
+  findAllMenus() {
+    return this.settingsService.findAllMenus();
+  }
+
+  @Post('info')
+  createInfo(@Body() dto: CreateInfoDto) {
+    return this.settingsService.createInfo(dto);
+  }
+
+  @Get('info')
+  findAllInfos() {
+    return this.settingsService.findAllInfos();
   }
 
   // @Get(':id')

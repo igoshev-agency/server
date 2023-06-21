@@ -5,6 +5,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { OrderModule } from './order/order.module';
 import { SettingsModule } from './settings/settings.module';
+import { ProjectModule } from './project/project.module';
+import { ServiceModule } from './service/service.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { SettingsModule } from './settings/settings.module';
     }),
     OrderModule,
     SettingsModule,
+    ProjectModule,
+    ServiceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
